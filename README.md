@@ -1,4 +1,4 @@
-# REST API для Python 2.7 на Python+SQLAlchemy+Flask
+# REST API на Python 2.7 с использованием Python+SQLAlchemy+Flask
 
 ## Для Python нужно установить:
 ```
@@ -17,4 +17,4 @@ class Article(data_base.Model):
     content = data_base.Column(data_base.Text)
 ```
 
-В репозитории уже есть база данных, в которую добавлена 1 статья с автором Pushkin A.S.
+В репозитории уже есть база данных, в которую добавлена 1 статья с автором **Pushkin A.S.**
