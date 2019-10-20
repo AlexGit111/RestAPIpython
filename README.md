@@ -6,7 +6,7 @@ pip install flask
 pip install flask-sqlalchemy
 ```
 
-При запуске restapi.py, программа ищет файл DataBase.sqlite в том же каталоге. Если базы данных нет, автоматически создается пустая sqlite-БД по модели:
+При запуске **restapi.py**, программа ищет файл **DataBase.sqlite** в том же каталоге. Если базы данных нет, автоматически создается новая пустая sqlite-БД по модели:
 
 ```python
 class Article(data_base.Model):
