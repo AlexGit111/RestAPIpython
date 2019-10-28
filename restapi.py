@@ -110,17 +110,26 @@ def patch_id_article(id):
     if cur_article is None: # Если статья с таким id существует
         return jsonify({'message' : 'article ' + id + ' not found'}), 404
     
+    #частичное изменение сущностей
+    author = None
+    content = None
+    
     try:
-        author = request.json['author']
-        content = request.json['content']
+        if 'author' in request.json:
+            author = request.json['author']
+        if 'content' in request.json:
+            content = request.json['content']        
         updated = time.strftime("%Y-%m-%dT%H:%M:%S")
                 
     except Exception as e:
         return jsonify({'message' : 'wrong input, cant update article ' + id}), 404
     
-    cur_article.author = author
-    cur_article.content = content
+    if author != None: 
+        cur_article.author = author
+    if content != None:  
+        cur_article.content = content
     cur_article.updated = updated
+    #частичное изменение сущностей
     
     data_base.session.commit()
     data_base.session.refresh(cur_article)
